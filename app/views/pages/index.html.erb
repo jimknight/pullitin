@@ -1,0 +1,27 @@
+<h1>Listing pages</h1>
+
+<table>
+  <tr>
+    <th>Path</th>
+    <th>Orig url</th>
+    <th>Source</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @pages.each do |page| %>
+  <tr>
+    <td><%= page.path %></td>
+    <td><%= page.orig_url %></td>
+    <td><%= page.source %></td>
+    <td><%= link_to 'Show', page %></td>
+    <td><%= link_to 'Edit', edit_page_path(page) %></td>
+    <td><%= link_to 'Destroy', page, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Page', new_page_path %>
